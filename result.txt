@@ -1,0 +1,47 @@
+test_reg_ok (text_xzs_reg.MyTestCase) ... FAIL
+test_login_err01 (text_xzs_login.MyTestCase) ... FAIL
+test_login_err02 (text_xzs_login.MyTestCase) ... FAIL
+test_login_ok (text_xzs_login.MyTestCase) ... FAIL
+
+======================================================================
+FAIL: test_reg_ok (text_xzs_reg.MyTestCase)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "D:\apitest26\text_xzs_reg.py", line 20, in test_reg_ok
+    self.assertDictEqual(result,r.json())
+AssertionError: {'code': 1, 'message': '成功', 'response': None} != {'code': 500, 'message': '系统内部错误', 'response': None}
+- {'code': 1, 'message': '成功', 'response': None}
+?          ^              ^^
+
++ {'code': 500, 'message': '系统内部错误', 'response': None}
+?          ^^^              ^^^^^^
+
+
+======================================================================
+FAIL: test_login_err01 (text_xzs_login.MyTestCase)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "D:\apitest26\text_xzs_login.py", line 19, in test_login_err01
+    self.assertIn("用户名或密码错误", t)
+AssertionError: '用户名或密码错误' not found in '{"message":"系统内部错误","code":500}'
+
+======================================================================
+FAIL: test_login_err02 (text_xzs_login.MyTestCase)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "D:\apitest26\text_xzs_login.py", line 23, in test_login_err02
+    self.assertIn("用户名或密码错误", t)
+AssertionError: '用户名或密码错误' not found in '{"message":"系统内部错误","code":500}'
+
+======================================================================
+FAIL: test_login_ok (text_xzs_login.MyTestCase)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "D:\apitest26\text_xzs_login.py", line 13, in test_login_ok
+    self.assertIn("成功",t)
+AssertionError: '成功' not found in '{"message":"系统内部错误","code":500}'
+
+----------------------------------------------------------------------
+Ran 4 tests in 4.311s
+
+FAILED (failures=4)
